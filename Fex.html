@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hacked By PutraWibuu</title>
+  <meta name="description" content="Security simulation / educational demo — visual only.">
+  <meta name="author" content="PutraWibuu — VYN CYBER TEAM (Documentation)">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#000;
+      --card:#071017;
+      --muted:#cfd8dc;
+      --accent:#00ffb3;
+      --accent2:#ff6b6b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased;}
+    .wrap{min-height:100vh;display:grid;place-items:center;padding:28px;}
+    .panel{width:min(980px,94%);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:28px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.03);box-shadow: 0 18px 60px rgba(0,0,0,0.7);}
+    .badge{position:absolute;left:18px;top:18px;background:rgba(255,255,255,0.03);color:var(--muted);padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px;border:1px solid rgba(255,255,255,0.02);z-index:8;}
+    .content{display:flex;gap:28px;align-items:center;}
+    .left{flex:1;min-width:260px;}
+    .title{font-family:Orbitron,monospace;color:var(--accent);font-size:clamp(22px,3.8vw,38px);margin:6px 0 8px 0;letter-spacing:0.6px;}
+    .subtitle{margin:0 0 16px 0;color:rgba(255,255,255,0.75);font-size:1rem;}
+    .credits{margin-top:12px;display:flex;gap:12px;align-items:center;font-weight:600;color:var(--accent2);}
+    .muted{margin-top:12px;color:rgba(255,255,255,0.35);font-size:13px;max-width:680px;line-height:1.45;}
+    .right{width:320px;display:flex;flex-direction:column;gap:12px;align-items:center;}
+    .media{width:320px;height:200px;border-radius:10px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;}
+    .media video{ width:100%; height:100%; object-fit:cover; display:block; }
+    .plane-wrap{position:absolute;top:-40px;left:-80px;width:420px;height:420px;pointer-events:none;z-index:6;opacity:0.95;}
+    .plane{position:absolute;width:110px;height:36px;transform-origin:center;}
+    svg { display:block; width:100%; height:100%; }
+    .flag {position:absolute;left:20%;top:64%;width:52px;height:30px;border-radius:3px;overflow:hidden;box-shadow: 0 8px 18px rgba(0,0,0,0.45);border:1px solid rgba(0,0,0,0.25);transform-origin:center;}
+    .flag .top{ background:#ff0000; height:50%; }
+    .flag .bot{ background:#ffffff; height:50%; }
+    canvas#snow { position:absolute; inset:0; z-index:3; pointer-events:none; }
+    .footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;color:rgba(255,255,255,0.38);font-size:13px;}
+    @media (max-width:760px){ .content{ flex-direction:column-reverse; align-items:center; } .right{ width:100%; } .media{ width:100%; height:180px; } .plane-wrap{ display:none; } }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="panel" role="main" aria-label="Security simulation panel">
+      <div class="badge"></div>
+
+      <div class="content">
+        <div class="left">
+          <div class="title">Security Ilusion</div>
+          <div class="subtitle">This Site has hacked!</div>
+
+          <div class="credits">
+            <div>Attackers: <strong style="color:var(--accent2);margin-left:8px;">PutraWibuu</strong></div>
+            <div style="opacity:2.0">Team: VYN CYBER TEAM</div>
+          </div>
+
+          <div class="muted">
+            We are not actually changing your entire look, I have backed everything up, this is just a warning that the system on your website needs to be upgraded!
+          </div>
+
+          <div class="footer">
+            <div>For class: Internal documentation</div>
+            <div>VYN CYBER TEAM • 2025</div>
+          </div>
+        </div>
+
+        <div class="right" aria-hidden="true">
+          <div class="media" title="Accent video">
+            <video src="https://files.catbox.moe/bdh66f.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.6);">PutraMods Officiall 🤤🤪</div>
+        </div>
+      </div>
+
+      <div class="plane-wrap" aria-hidden="true">
+        <svg viewBox="0 0 800 500" preserveAspectRatio="none" width="100%" height="100%" aria-hidden="true">
+          <path id="flightPath" d="M -60 420 C 120 360, 300 220, 420 180 C 540 140, 700 120, 860 90" fill="none" stroke="none"></path>
+        </svg>
+
+        <div id="plane" class="plane" style="left:0;top:0;">
+          <svg viewBox="0 0 64 20" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 10 L16 6 L28 8 L40 7 L62 9" />
+              <path d="M16 6 L24 2 L30 8" />
+              <path d="M6 10 L18 12 L28 14 L42 13 L56 12" />
+            </g>
+          </svg>
+
+          <div class="flag" id="flagEl" aria-hidden="true">
+            <div class="top"></div>
+            <div class="bot"></div>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="snow"></canvas>
+    </div>
+  </div>
+
+  <!-- Audio autoplay tersembunyi -->
+  <audio src="https://files.catbox.moe/19csgq.mp3" autoplay loop style="display:none"></audio>
+
+  <script>
+    /* Snow effect */
+    (function(){
+      const c = document.getElementById('snow');
+      const ctx = c.getContext('2d');
+      let w = c.width = innerWidth;
+      let h = c.height = innerHeight;
+      const flakes = [];
+      const COUNT = Math.max(24, Math.floor((w*h)/22000));
+      function rand(a,b){ return Math.random()*(b-a)+a; }
+      for(let i=0;i<COUNT;i++){
+        flakes.push({ x:rand(0,w), y:rand(0,h), r:rand(0.6,2.6), s:rand(0.2,0.9) });
+      }
+      addEventListener('resize', ()=>{ w=c.width=innerWidth; h=c.height=innerHeight; });
+      function draw(){
+        ctx.clearRect(0,0,w,h);
+        ctx.fillStyle = 'rgba(255,255,255,0.9)';
+        for(const f of flakes){
+          f.y += 0.35 * f.s + 0.1;
+          f.x += Math.sin(f.y*0.008) * 0.3;
+          if(f.y > h + 8){ f.y = -8; f.x = rand(0,w); }
+          ctx.globalAlpha = 0.06 * f.s;
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI*2);
+          ctx.fill();
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    /* Plane animation along path */
+    (function(){
+      const path = document.getElementById('flightPath');
+      const plane = document.getElementById('plane');
+      const flagEl = document.getElementById('flagEl');
+      if(!path || !plane) return;
+      const pathLen = path.getTotalLength();
+      let t = 0;
+      const speed = 0.00022;
+      function step(){
+        t += speed;
+        if(t > 1) t = 0;
+        const pt = path.getPointAtLength(t * pathLen);
+        const wrap = document.querySelector('.plane-wrap').getBoundingClientRect();
+        const x = wrap.left + (pt.x / 800) * wrap.width;
+        const y = wrap.top + (pt.y / 500) * wrap.height;
+        plane.style.transform = `translate(${x}px, ${y}px) translate(-10%, -60%) rotate(${Math.sin(t*6.28)*8}deg)`;
+        flagEl.style.transform = `translate(${x + 12}px, ${y + 28}px) rotate(${Math.sin(t*6.28)*6}deg)`;
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    })();
+  </script>
+</body>
+</html>
